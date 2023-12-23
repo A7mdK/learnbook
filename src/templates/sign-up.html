@@ -1,8 +1,15 @@
-{% extends 'base-form.html' %}
+{% extends './base-templates/base-form.html' %}
 {% block title %}Sign Up to LearnBook{% endblock %}
 
 {% block form_content %}
-    <form action="{{ url_for('sign_up') }}" method="post" class="form">
+    <style>
+        body {
+            background-image: url('../static/images/home.jpeg');
+            background-size: 105% auto;
+             }           
+    </style>
+    <h3 style="position: relative; bottom: 30px;">{{ message }}</h3>
+    <form method="POST" class="form">
 
         <div class="input-container">
             <input type="text" id="name" name="name" placeholder="Name" class="entry" required>
@@ -10,7 +17,7 @@
         </div>
 
         <div class="input-container">
-            <input type="text" id="email" name="email" placeholder="Email" class="entry" required>
+            <input type="email" id="email" name="email" placeholder="Email" class="entry" required>
             <i class="fa-solid fa-user input-icon"></i>
         </div>
 
@@ -22,15 +29,26 @@
         <div class="input-container">
             <select id="department" name="department" class="entry" style="padding: 5px 10px; height: 40px;" required>
                 <option value="" disabled selected>Select Your Department</option>
-                <option value="cmpe">Computer Engineering</option>
-                <option value="eeen">Electrical Electronics</option>
-                <option value="arch">Architecture</option>
+                <option value="Architecture">Architecture</option>
+                <option value="Buisness Administration">Buisness Administation</option>
+                <option value="Computer Engineering">Computer Engineering</option>
+                <option value="Civil Engineering">Civil Engineering</option>
+                <option value="Digital Game Design">Digital Game Design</option>
+                <option value="Electrical Engineering">Electrical Engineering</option>
+                <option value="Energy Systems Engineering">Energy Systems Engineering</option>
+                <option value="Economics">Economics</option>
+                <option value="Genetics and Bioengineering">Genetics and Bioengineering</option>
+                <option value="Industrial Engineering">Industrial Engineering</option>
+                <option value="Law">Law</option>
+                <option value="Mechanical Engineering">Mechanical Engineering</option>
+                <option value="Mechatronics Engineering">Mechatronics Engineering</option>
+                <option value="Math">Mathematics</option>
+                <option value="Visual Communication Design">Visual Communication Design</option>
             </select>
         </div>
 
         <button type="submit" class="btn-1">Sign Up</button>
 
         <p class="form-footer">Already registered? <a href="./login" class="link">Login now!</a></p>
-
     </form>
 {% endblock %}
