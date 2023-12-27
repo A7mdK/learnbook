@@ -92,6 +92,16 @@
                         </li>
                     </ul>
                 </div>
+                <a class="a-02 a-04" href="{{ url_for('logout') }}">
+                    <div class="row text-center">
+                        <span class="material-symbols-outlined" id="navbar-icons">
+                            logout
+                        </span>
+                    </div>
+                    <div class="row text-02 justify-content-center">
+                        Logout
+                    </div>
+                </a>
             </div>
         </nav>
     
@@ -100,8 +110,8 @@
             <div class="user-image"></div>
             <p class="user-name"> {{ user.name }}</p>
             <p class="user-department"> {{ user.department }}</p>
-            <p class="follower-count">Followers: {{ user.user_follower_count }}</p>
-            <p class="user-communities">--Followed Communities--</p>
+            <p class="follower-count">Following: {{ user.user_follower_count }}</p>
+            <p class="user-communities">Communities: {{ user.user_community_count }}</p>
             <button id="follow-button" class="follow-button">{{ is_followed }}</button>
             <button class="message-button"> Message </button>
         </div>
